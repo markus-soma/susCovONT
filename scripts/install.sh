@@ -71,6 +71,7 @@ echo "##### Cloning artic nextflow pipeline to ${INSTALL_DIR}/ncov2019-artic-nf"
 cd $INSTALL_DIR
 git clone https://github.com/connor-lab/ncov2019-artic-nf
 sed -i.bak 's/artic=1.1.3/artic=1.2.1/g' ${INSTALL_DIR}/ncov2019-artic-nf/environments/nanopore/environment.yml #Change "1.2.1" to desired artic version
+echo "  - muscle=3.8.1551" >> ${INSTALL_DIR}/ncov2019-artic-nf/environments/nanopore/environment.yml #Specify muscle version to 3.8.1551
 cp ${INSTALL_DIR}/susCovONT/scripts/articQC.py ncov2019-artic-nf/bin/qc.py #Update the QC script with the one from this repository.
 
 ## Create conda env to use as --cache for nextflow pipeline
