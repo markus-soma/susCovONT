@@ -397,7 +397,7 @@ def get_nextflow_command(primer_kit, demultiplexed_fastq, fast5_pass, sequencing
     """Get the command used for running artic via nextflow"""
     #TODO: add option to specify run folder, cache and medaka options
     logging.info('Running artic guppyplex and artic minion via nextflow pipeline with command: ')
-    nextflow_command = ['nextflow run', nf_dir_location,
+    nextflow_command = ['NXF_VER=20.10.0 nextflow run', nf_dir_location,
                      ' -profile conda --nanopolish --cache', conda_location,
                      '--prefix', run_name, 
                      '--basecalled_fastq', demultiplexed_fastq, 
